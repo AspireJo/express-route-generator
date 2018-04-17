@@ -1,0 +1,39 @@
+{
+  "name": "@aspire-jo/express-route-generator",
+  "version": "1.0.0",
+  "description": "Route generator for express app",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aspire-jo/express-route-generator.git"
+  },
+  "keywords": [
+    "Aspire",
+    "route",
+    "express",
+    "generator"
+  ],
+  "author": "aspire-jo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aspire-jo/express-route-generator/issues"
+  },
+  "homepage": "https://github.com/aspire-jo/express-route-generator#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express-promise-router": "^3.0.2",
+    "glob-promise": "^3.4.0",
+    "lodash": "^4.17.5",
+    "string-format": "^1.0.0"
+  }
+}
