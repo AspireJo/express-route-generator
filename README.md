@@ -3,12 +3,12 @@ Auto generate routes for express app. This library uses a defined pattern to glo
 
 ## Version
 
-> 1.0.0
+> 0.1.2
 
 ## Usage
 
 ``` javascript
-import routeGen from '@aspire-jo/express-route-generator';
+import routeGen from '@aspirejo/express-route-generator';
 import express from 'express';
 
 const app = express();
@@ -22,7 +22,7 @@ app.listen(3000, () => { console.log('listening to port 3000!'); });
 
 Or
 ``` javascript
-const routeGen = require('@aspire-jo/express-route-generator');
+const routeGen = require('@aspirejo/express-route-generator');
 const express = require('express');
 
 const app = express();
@@ -155,4 +155,4 @@ All routes handlers must:
   - `aliases` : a string array that represent aliases for the same route (optional)
 
 ### Example
-A sample project can be found [here](https://github.com/aspire-jo/express-dynamic-routes-boilerplate).
+A sample project can be found [here](https://github.com/AspireJo/express-dynamic-routes-boilerplate).
