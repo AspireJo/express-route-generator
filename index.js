@@ -23,5 +23,5 @@ async function generate(app, config) {
   return generator(app, mergedConfig);
 }
 
-export default async (app, config) => this.generate(app, config);
+export default async (app, config) => generate(app, config);
 export { generate };

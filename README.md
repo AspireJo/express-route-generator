@@ -50,33 +50,45 @@ app.listen(3000, () => { console.log('listening to port 3000!'); });
 }
 ```
 
-| Property | Type | Usage | Default value |
-| ------------- | ------------- | ------------- | ------------- | 
-| `pattern` | `string` | files globbing pattern (**required**) | `undefined` |
-| `logger` | `object` | object to be used in logging |`console` |
-| `baseUrl` | `string` | used to construct routes, uses a formatted string | `/api/{0}` |
-| `routingMethodsRegex` | `regex` | used to match the targeted files from the globbed list | '/_(delete|get|post|put|patch)\.(v\d+)(\.\S+)*\.js$/' |
-| `globalMiddlewares` | `array<function>` | to register global middlewares for all routes | `undefined` |
-| `versioning` | `object` |used for versioning settings | `undefined` |
+| Property | Type | Usage |
+| ------------- | ------------- | ------------- | 
+| `pattern` | `string` | files globbing pattern (**required**) |
+| `logger` | `object` | object to be used in logging |
+| `baseUrl` | `string` | used to construct routes, uses a formatted string |
+| `routingMethodsRegex` | `regex` | used to match the targeted files from the globbed list |
+| `globalMiddlewares` | `array<function>` | to register global middlewares for all routes |
+| `versioning` | `object` |used for versioning settings |
 
 #### `pattern`
+> Default value : `undefined`
+
 Used to glob all files that matches that pattern using [glob](https://www.npmjs.com/package/glob). This property must be provided.
 
 #### `logger`
+> Default value: `console`
+
 By default `console` is used to log actions. You can use any custom logger as long as it contains a `debug` function.
 
-#### `routingMethodsRegex`
-Used to filter the globbed files by matching against this regular expression.
-
 #### `baseUrl`
+> Default value: `/api/{0}` 
+
 A string format that will be used to generate the router handlers prefixes; each found version will has its own router handler with a prefix generated using this format.
+
+#### `routingMethodsRegex`
+> Default value: /_(delete|get|post|put|patch)\.(v\d+)(\.\S+)*\.js$/
+
+Used to filter the globbed files by matching against this regular expression.
 
 Router handlers are promisified using [`express-promise-router`](https://www.npmjs.com/package/express-promise-router) package
 
 #### `globalMiddlewares`
+> Default value: `undefined`
+
 Contains an array of express middlewares that will be applied on all generated routes.
 
 #### `versioning`
+> Default value: `undefined`
+
 Versioning settings, the expected structure as follows
 
 ``` json
@@ -141,3 +153,6 @@ All routes handlers must:
   - `controller` : a function to execute
   - `middlewares` : an express middlewares array that will be executed for a specific route (optional)
   - `aliases` : a string array that represent aliases for the same route (optional)
+
+### Example
+A sample project can be found [here](https://github.com/aspire-jo/express-dynamic-routes-boilerplate).
