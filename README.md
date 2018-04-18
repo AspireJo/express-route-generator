@@ -154,5 +154,19 @@ All routes handlers must:
   - `middlewares` : an express middlewares array that will be executed for a specific route (optional)
   - `aliases` : a string array that represent aliases for the same route (optional)
 
+### Test
+Run  
+
+> ``` bash
+> npm run test
+> ```
+
+### Code coverage
+Run  
+
+> ``` bash
+> npm run cover
+> ```
+
 ### Example
 A sample project can be found [here](https://github.com/AspireJo/express-dynamic-routes-boilerplate).

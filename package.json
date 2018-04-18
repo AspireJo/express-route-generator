@@ -4,9 +4,10 @@
   "description": "Route generator for express app",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register \"./test/**/*.spec.js*\"",    
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js",    
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test/*.js -- --require babel-register"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,10 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.1.0",
     "rimraf": "^2.6.2"
   },
   "dependencies": {

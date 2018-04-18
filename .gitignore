@@ -59,3 +59,7 @@ typings/
 
 #dist
 dist
+
+.vscode/*
+
+.coverage/*
